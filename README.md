@@ -1,15 +1,6 @@
 # Revenue Operations & Sales Pipeline Analytics
 
-An end-to-end portfolio project for Data Analyst and BI Analyst roles using advanced SQL, Python, and Power BI. It examines pipeline health, win rates, booked revenue, sales-cycle duration, stage conversion, and lead-source performance.
-
-## Project goals
-- Create a reproducible synthetic CRM opportunity dataset.
-- Analyze pipeline and sales KPIs with Python and SQL.
-- Design a three-page Power BI dashboard using documented DAX measures.
-- Validate data contracts and run automated tests with GitHub Actions.
-
-## Data disclaimer
-All data is synthetic and generated for demonstration. Revenue and performance metrics are not real company results.
+An end-to-end portfolio project for Data Analyst and BI Analyst roles using advanced SQL, Python, and Power BI. It analyzes pipeline health, win rates, booked revenue, sales-cycle duration, stage conversion, and lead-source performance.
 
 ## Quick start
 ```bash
@@ -19,9 +10,18 @@ python src/analyze_pipeline.py
 pytest -q
 ```
 
-## Dashboard plan
-1. Executive overview: booked revenue, open pipeline, win rate, monthly trend.
-2. Pipeline diagnostics: stage distribution, funnel conversion, aging.
-3. Sales effectiveness: lead-source performance, rep leaderboard, sales-cycle analysis.
+## Dashboard assets
+- **Interactive browser preview:** [dashboard_preview.html](powerbi/dashboard_preview.html)
+- **Power BI build specification:** [dashboard_spec.md](powerbi/dashboard_spec.md)
+- **Starter DAX measures:** [measures.dax](powerbi/measures.dax)
 
-The `powerbi/` folder contains DAX measures and dashboard implementation guidance. A `.pbix` file is not included; build the report in Power BI Desktop using the included CSV and instructions.
+The HTML preview is a browser-based companion, not a native Power BI report. To create the native report, import `data/raw/opportunities.csv` in Power BI Desktop and follow the build spec and DAX measures. A `.pbix` file is not included.
+
+## Analytics included
+- KPI definitions with win-rate denominator made explicit
+- SQL CTEs and window functions for monthly trends and rankings
+- Python-generated synthetic CRM data and source summaries
+- Data contract checks, automated tests, and GitHub Actions CI
+
+## Data disclaimer
+All records and values are synthetic and generated for demonstration. Revenue values are opportunity amount proxies, not accounting revenue or actual business performance.
