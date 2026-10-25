@@ -1,0 +1,15 @@
+Total Opportunities = DISTINCTCOUNT(opportunities[opportunity_id])
+
+Closed Opportunities = CALCULATE([Total Opportunities], opportunities[is_closed] = 1)
+
+Won Opportunities = CALCULATE([Total Opportunities], opportunities[is_won] = 1)
+
+Win Rate % = DIVIDE([Won Opportunities], [Closed Opportunities], 0)
+
+Booked Revenue Proxy = CALCULATE(SUM(opportunities[amount]), opportunities[is_won] = 1)
+
+Open Pipeline Value = CALCULATE(SUM(opportunities[amount]), opportunities[is_closed] = 0)
+
+Average Won Deal = DIVIDE([Booked Revenue Proxy], [Won Opportunities], 0)
+
+Median Won Sales Cycle = CALCULATE(MEDIAN(opportunities[sales_cycle_days]), opportunities[is_won] = 1)
