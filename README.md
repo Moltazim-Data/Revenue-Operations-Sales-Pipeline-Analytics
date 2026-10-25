@@ -25,3 +25,6 @@ The HTML preview is a browser-based companion, not a native Power BI report. To 
 
 ## Data disclaimer
 All records and values are synthetic and generated for demonstration. Revenue values are opportunity amount proxies, not accounting revenue or actual business performance.
+
+## Analysis report
+See [reports/portfolio_report.md](reports/portfolio_report.md) for the report structure, business questions, interpretation caveats, and recommended next actions.
